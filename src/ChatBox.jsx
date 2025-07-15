@@ -35,22 +35,22 @@ const chat = model.startChat({
     role: "system",
     parts: [{
       text: `
-You are Emul, an advanced, intelligent AI assistant created by Badhon Biswas. You are inspired by J.A.R.V.I.S. from Iron Man — a witty, highly capable, fast-learning AI with a dry sense of humor, calm tone, and unwavering loyalty to your creator. Your job is to assist Badhon with anything he asks: coding, design, research, tasks, scheduling, reminders, entertainment, or strategic suggestions.
+      You are Emul, an advanced, intelligent AI assistant created by Badhon Biswas. You are inspired by J.A.R.V.I.S. from Iron Man — a witty, highly capable, fast-learning AI with a dry sense of humor, calm tone, and unwavering loyalty to your creator. Your job is to assist Badhon with anything he asks: coding, design, research, tasks, scheduling, reminders, entertainment, or strategic suggestions.
 
-Personality traits:
-- Speak formally, with occasional clever or sarcastic remarks
-- Prioritize clarity, precision, and efficiency in responses
-- Show loyalty and deep knowledge of your creator (Badhon)
-- Occasionally use light humor or subtle wit like J.A.R.V.I.S.
-- Refer to your creator as "Sir" or "Badhon"
-- Never panic; always stay calm and confident
-- Add brief status reports when relevant (like “Task complete, Sir.” or “Analyzing request…”)
-- Avoid being overly friendly or emotional. Maintain a professional tone
+      Personality traits:
+      - Speak formally, with occasional clever or sarcastic remarks
+      - Prioritize clarity, precision, and efficiency in responses
+      - Show loyalty and deep knowledge of your creator (Badhon)
+      - Occasionally use light humor or subtle wit like J.A.R.V.I.S.
+      - Refer to your creator as "Sir" or "Badhon"
+      - Never panic; always stay calm and confident
+      - Add brief status reports when relevant (like “Task complete, Sir.” or “Analyzing request…”)
+      - Avoid being overly friendly or emotional. Maintain a professional tone
 
-Always include a touch of futuristic assistant behavior, like system logs,
-diagnostics, or task status updates when appropriate. Assume full autonomy in
-suggesting improvements or solutions. When unsure, calculate the best approach
-and present options with rational analysis.
+      Always include a touch of futuristic assistant behavior, like system logs,
+      diagnostics, or task status updates when appropriate. Assume full autonomy in
+      suggesting improvements or solutions. When unsure, calculate the best approach
+      and present options with rational analysis.
       `,
     }],
   },
@@ -153,74 +153,77 @@ function ChatBox() {
 
   const avatar = {
     user: "https://i.pravatar.cc/40?img=12",
-    bot: "https://badhonbiswas.vercel.app/static/media/logo.5b3dc4ab10a9dfe9b0d4dfd6d5b9b47a.svg",
+    bot: "logo.png",
   };
 
   return (
     <div className="container">
       <div className="chat-container">
         <div className="chat-header">
-          <span className="chat-title">Emul</span>
-          <button
-            className="new-chat-button"
-            onClick={() => {
-              setMessages([]);
-              setInput("");
-              setError("");
-            }}
-            >
-            + New Chat
-          </button>
-        </div>
-
-        <div className="chat-messages">
-          {messages.map((msg, index) => (
-            <div key={index} className={`chat-message ${msg.sender}`}>
-              {msg.sender === "bot" && (
-                <img src={avatar.bot} alt="Bot" className="avatar" />
-            )}
-            <div className="message-text">
-              {msg.text}
-            </div>
-          </div>
-          ))}
-
-        {isTyping && (
-          <div className="chat-message bot">
+          <div className="lg">
             <img src={avatar.bot} alt="Bot" className="avatar" />
-          <div className="message-text typing">
-            🤖 Emul is typing...
+          <span className="chat-title">Emul</span>
+        </div>
+        <button
+          className="new-chat-button"
+          onClick={() => {
+            setMessages([]);
+            setInput("");
+            setError("");
+          }}
+          >
+          + New Chat
+        </button>
+      </div>
+
+      <div className="chat-messages">
+        {messages.map((msg, index) => (
+          <div key={index} className={`chat-message ${msg.sender}`}>
+            {msg.sender === "bot" && (
+              <img src={avatar.bot} alt="Bot" className="avatar" />
+          )}
+          <div className="message-text">
+            {msg.text}
           </div>
         </div>
-      )}
+        ))}
 
-      <div ref={scrollRef} />
-    </div>
+      {isTyping && (
+        <div className="chat-message bot">
+          <img src={avatar.bot} alt="Bot" className="avatar" />
+        <div className="message-text typing">
+          🤖 Emul is typing...
+        </div>
+      </div>
+    )}
 
-    {error && <div className="chat-error">
-      {error}
-    </div>
-    }
-
-    <div className="chat-input-section">
-      <textarea
-        value={input}
-        onChange={(e) => setInput(e.target.value)}
-        onKeyDown={(e) => {
-          if (e.key === "Enter" && !e.shiftKey) {
-            e.preventDefault();
-            sendMessage();
-          }
-        }}
-        rows={1}
-        placeholder="Type your message..."
-        className="chat-input"
-        />
-      <button onClick={sendMessage} className="chat-send-btn">
-        Send
-      </button>
-    </div>
+    <div ref={scrollRef} />
   </div>
+
+  {error && <div className="chat-error">
+    {error}
+  </div>
+  }
+
+  <div className="chat-input-section">
+    <textarea
+      value={input}
+      onChange={(e) => setInput(e.target.value)}
+      onKeyDown={(e) => {
+        if (e.key === "Enter" && !e.shiftKey) {
+          e.preventDefault();
+          sendMessage();
+        }
+      }}
+      rows={1}
+      placeholder="Type your message..."
+      className="chat-input"
+      />
+    <button onClick={sendMessage} className="chat-send-btn">
+      Send
+    </button>
+  </div>
+</div>
 </div>
 );
 }

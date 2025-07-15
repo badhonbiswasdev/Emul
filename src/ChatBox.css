@@ -1,5 +1,6 @@
 :root {
-  --main: #f0f0f0;         /* Bot message background */
+  --main: rgb(191,232,249);         /* Bot message
+  background */
   --primary: #4f46e5;      /* Accent color (buttons, highlights) */
   --secondery: #2d2f36;    /* User message background */
   --softdark: #1f1f1f;     /* Input field and soft dark areas */
@@ -82,7 +83,7 @@ body {
 }
 
 .chat-message.bot .message-text {
-  background-color: var(--main);
+background: linear-gradient(45deg, rgb(228,245,252) 0%,rgb(191,232,249) 30%,rgb(197,182,249) 100%);
   color: #000;
 }
 
@@ -175,4 +176,12 @@ border-radius: 16px;
 
 .new-chat-button:hover {
   background-color: #3b3fc0;
+}
+
+.chat-title {
+  text-align: left;
+}
+.lg {
+  display: flex;
+  align-items: center;
 }
