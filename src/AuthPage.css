@@ -1,0 +1,68 @@
+
+.auth-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  }
+  
+  .auth-box {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    color: white;
+    backdrop-filter: blur(10px);
+  }
+  
+  .auth-box h2 {
+    margin-bottom: 10px;
+    font-size: 2.5em;
+    font-weight: 300;
+  }
+  
+  .auth-box p {
+    margin-bottom: 30px;
+    font-size: 1.2em;
+    font-weight: 300;
+  }
+  
+  .pin-input {
+    width: 100%;
+    padding: 15px;
+    margin-bottom: 20px;
+    border: none;
+    border-radius: 10px;
+    text-align: center;
+    font-size: 1.5em;
+    background: rgba(255, 255, 255, 0.2);
+    color: white;
+    outline: none;
+  }
+  
+  .pin-input::placeholder {
+    color: rgba(255, 255, 255, 0.7);
+  }
+  
+  .auth-button {
+    width: 100%;
+    padding: 15px;
+    border: none;
+    border-radius: 10px;
+    background: #ff4757;
+    color: white;
+    font-size: 1.5em;
+    cursor: pointer;
+    transition: background 0.3s ease;
+  }
+  
+  .auth-button:hover {
+    background: #e04050;
+  }
+  
+  .error-message {
+    color: #ff4757;
+    margin-top: 15px;
+  }
