@@ -1,5 +1,4 @@
-
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import './AuthPage.css';
 
@@ -7,6 +6,13 @@ const AuthPage = () => {
   const [pin, setPin] = useState('');
   const [error, setError] = useState('');
   const navigate = useNavigate();
+
+  useEffect(() => {
+    const isAuthenticated = localStorage.getItem('isAuthenticated');
+    if (isAuthenticated) {
+      navigate('/chat');
+    }
+  }, [navigate]);
 
   const handlePinChange = (e) => {
     setPin(e.target.value);

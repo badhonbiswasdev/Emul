@@ -1,68 +1,88 @@
+:root {
+    --bg-dark: #1a1a2e;
+    --bg-medium: #202a3e;
+    --bg-light: #2c3e50;
+    --text-light: #e0e0e0;
+    --text-dark: #bbbbbb;
+    --accent-color: #8e44ad;
+    --accent-color-hover: #9b59b6;
+    --border-color: #34495e;
+    --shadow-color: rgba(0, 0, 0, 0.3);
+    --error-color: #e74c3c;
+}
 
 .auth-container {
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-  }
-  
-  .auth-box {
-    background: rgba(255, 255, 255, 0.1);
+    background: linear-gradient(to bottom right, var(--bg-dark), #16213e, #0f3460);
+}
+
+.auth-box {
+    background: var(--bg-medium);
     padding: 40px;
     border-radius: 20px;
-    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 15px 35px var(--shadow-color);
     text-align: center;
-    color: white;
-    backdrop-filter: blur(10px);
-  }
-  
-  .auth-box h2 {
+    color: var(--text-light);
+    border: 1px solid var(--border-color);
+}
+
+.auth-box h2 {
     margin-bottom: 10px;
     font-size: 2.5em;
     font-weight: 300;
-  }
-  
-  .auth-box p {
+}
+
+.auth-box p {
     margin-bottom: 30px;
     font-size: 1.2em;
     font-weight: 300;
-  }
-  
-  .pin-input {
+    color: var(--text-dark);
+}
+
+.pin-input {
     width: 100%;
     padding: 15px;
     margin-bottom: 20px;
-    border: none;
+    border: 1px solid var(--border-color);
     border-radius: 10px;
     text-align: center;
     font-size: 1.5em;
-    background: rgba(255, 255, 255, 0.2);
-    color: white;
+    background: var(--bg-light);
+    color: var(--text-light);
     outline: none;
-  }
-  
-  .pin-input::placeholder {
-    color: rgba(255, 255, 255, 0.7);
-  }
-  
-  .auth-button {
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.pin-input::placeholder {
+    color: var(--text-dark);
+}
+
+.pin-input:focus {
+    border-color: var(--accent-color);
+    box-shadow: 0 0 0 3px rgba(142, 68, 173, 0.3);
+}
+
+.auth-button {
     width: 100%;
     padding: 15px;
     border: none;
     border-radius: 10px;
-    background: #ff4757;
+    background: var(--accent-color);
     color: white;
     font-size: 1.5em;
     cursor: pointer;
-    transition: background 0.3s ease;
-  }
-  
-  .auth-button:hover {
-    background: #e04050;
-  }
-  
-  .error-message {
-    color: #ff4757;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.auth-button:hover {
+    background-color: var(--accent-color-hover);
+    transform: translateY(-2px);
+}
+
+.error-message {
+    color: var(--error-color);
     margin-top: 15px;
-  }
+}
