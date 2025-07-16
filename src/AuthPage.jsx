@@ -41,9 +41,9 @@ const AuthPage = () => {
     <div className="auth-container fullscreen">
       <div className="auth-box">
         <h1>Welcome to Emulai</h1>
-        <p>A Personal ai assistant</p>
         <p>
-          Please enter your PIN to continue.
+          Emul – Your Personal AI Assistant.
+          Kindly enter your secure PIN to continue.
         </p>
         <form onSubmit={handleSubmit}>
           <input
