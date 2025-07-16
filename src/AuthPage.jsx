@@ -30,10 +30,10 @@ const AuthPage = () => {
   };
 
   return (
-    <div className="auth-container">
+    <div className="auth-container fullscreen">
       <div className="auth-box">
-        <h2>Welcome Back</h2>
-        <p>Enter your PIN to access the chat</p>
+        <h1>Welcome to Gemini Chat</h1>
+        <p>Your private and secure chat application. Please enter your PIN to continue.</p>
         <form onSubmit={handleSubmit}>
           <input
             type="password"
