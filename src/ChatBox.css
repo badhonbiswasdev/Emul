@@ -32,6 +32,7 @@ body {
 
 
 .chat-layout {
+  position: fixed;
   display: flex;
   flex-direction: column;
   height: 100svh; 
