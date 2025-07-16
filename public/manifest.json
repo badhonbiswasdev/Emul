@@ -1,0 +1,21 @@
+{
+  "name": "Emul – Badhon's AI Assistant",
+  "short_name": "Emul",
+  "description": "Emul is Badhon's personal AI assistant, inspired by JARVIS from Iron Man. Chat smartly, get things done!",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#07052b",
+  "theme_color": "#07052b",
+  "icons": [
+    {
+      "src": "/logo.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/logo.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
