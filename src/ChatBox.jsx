@@ -14,7 +14,7 @@ const model = genAI.getGenerativeModel({
   model: "gemini-1.5-flash"
 });
 const searchModel = genAI.getGenerativeModel({
-  model: "gemini-1.5-flash"
+  model: "gemini-2.5-flash"
 });
 const searchTool = {
   googleSearch: {}
